@@ -34,20 +34,20 @@ class WeatherData extends StatelessWidget {
             style: GoogleFonts.asar(fontSize: 28),
           ),
           const SizedBox(height: 40),
-          Text(weatherModel.temp!.toInt().toString(),
+          Text("${weatherModel.temp!.toInt().toString()}°",
               style: GoogleFonts.abel(fontSize: 35)),
           const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'min temp ${weatherModel.mintemp_c!.toInt()}  ',
+                'min temp ${weatherModel.mintemp_c!.toInt()}°',
                 style: const TextStyle(fontSize: 22),
               ),
               const SizedBox(width: 20),
               const Text('/'),
               const SizedBox(width: 20),
-              Text('max temp ${weatherModel.maxtemp_c!.toInt()}',
+              Text('max temp ${weatherModel.maxtemp_c!.toInt()}°',
                   style: const TextStyle(fontSize: 22)),
             ],
           ),
@@ -55,13 +55,17 @@ class WeatherData extends StatelessWidget {
           Text('Condation : ${weatherModel.condation}',
               style: GoogleFonts.asar(fontSize: 28)),
           const SizedBox(height: 15),
-          Image.asset(weatherModel.condation == 'Clear'
+          Image.asset(weatherModel.condation == 'Sunny'
               ? 'assets/sunny.png'
               : weatherModel.condation == 'Moderate rain'
                   ? 'assets/rainy.png'
                   : weatherModel.condation == 'Partly cloudy'
                       ? 'assets/cloudy.png'
-                      : 'assets/splash.png'),
+                      : weatherModel.condation == 'Patchy rain possible'
+                          ? 'assets/rainy.png'
+                          : weatherModel.condation == 'Moderate snow'
+                              ? 'assets/snow.png'
+                              : ''),
         ],
       ),
     );

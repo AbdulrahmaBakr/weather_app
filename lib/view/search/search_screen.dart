@@ -62,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ),
               FutureBuilder(
-                  future: WeatherService().getForecast(country: 'cairo'),
+                  future: WeatherService().getForecast(country: 'alexandria'),
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       // While the data is being fetched, display a loading indicator.

@@ -23,7 +23,7 @@ class WeatherModel {
     return WeatherModel(
       temp: json['forecast']['forecastday'][i]['day']['avgtemp_c'],
       city: json['location']['name'],
-      condation: json['forecast']['forecastday'][i]['day']['condition']['text'],
+      condation: json['current']['condition']['text'],
       date: json['forecast']['forecastday'][i]['date'],
       mintemp_c: json['forecast']['forecastday'][i]['day']['mintemp_c'],
       maxtemp_c: json['forecast']['forecastday'][i]['day']['maxtemp_c'],
